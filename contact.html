@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | InsuranceBridgePro</title>
+  <meta name="description" content="Contact InsuranceBridgePro. Ask questions about comparing auto, health, or renters insurance options." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="./assets/InsuranceBridgepro_logo.png" alt="InsuranceBridgePro" class="logo" />
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="navlinks">
+        <a href="./index.html">Home</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h1 class="h1 h1-medium">Contact</h1>
+      <p class="sub">
+        Ask a question and we'll respond. Please do not include sensitive personal information.
+      </p>
+
+      <div id="form-success" class="notice" style="display:none;background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.25);border-left-color:var(--accent2)">
+        ✅ <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
+      </div>
+
+      <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <!-- Honeypot field for spam protection -->
+        <p style="display:none;">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div>
+          <label for="name">Name</label>
+          <input class="input" id="name" name="name" placeholder="Your name" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div>
+          <label for="type">Insurance type</label>
+          <select class="input" id="type" name="type">
+            <option value="auto">Auto</option>
+            <option value="health">Health</option>
+            <option value="renters">Renters</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea class="input" id="message" name="message" rows="6" placeholder="What do you want to compare?" required></textarea>
+          <small>Tip: include your state/country if relevant.</small>
+        </div>
+
+        <button class="btn green" type="submit">Send Message →</button>
+      </form>
+
+      <div class="hr"></div>
+
+      <div id="disclaimer" class="notice">
+        <strong>Disclaimer:</strong> This website provides insurance comparison and educational information only.
+        We are not an insurance company, broker, or agent, and we do not provide insurance directly.
+        Coverage availability and pricing vary by provider. Links may be affiliate links.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="hr"></div>
+      <div>
+        © <span id="y"></span> InsuranceBridgePro •
+        <a href="./index.html">Home</a> • <a href="./compare.html">Compare</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    
+    // Preselect insurance type from URL like: contact.html?type=auto
+    const params = new URLSearchParams(location.search);
+    const t = params.get("type");
+    if (t) document.getElementById("type").value = t;
+    
+    // Handle form submission
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        // Show success message
+        document.getElementById('form-success').style.display = 'block';
+        // Hide the form
+        form.style.display = 'none';
+        // Scroll to success message
+        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+      })
+      .catch((error) => {
+        alert('Oops! There was a problem submitting your form. Please try again.');
+      });
+    });
+    
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const navlinks = document.querySelector('.navlinks');
+      hamburger.classList.toggle('active');
+      navlinks.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

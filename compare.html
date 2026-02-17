@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compare Insurance Quotes | Auto • Health • Renters</title>
+  <meta name="description" content="Compare auto, health, and renters insurance. Choose coverage that fits your budget. Free, fast, and no obligation." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="./assets/InsuranceBridgepro_logo.png" alt="InsuranceBridgePro" class="logo" />
+        <span class="badge">Compare & save</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="navlinks">
+        <a href="./index.html">Home</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h1 class="h1 h1-large">Compare Insurance Quotes in Minutes</h1>
+      <p class="sub">
+        See available options, compare prices, and choose the coverage that works best for you.
+        Pick a category below.
+      </p>
+
+      <div class="grid3">
+        <div class="card" id="auto">
+          <h3>🚗 Auto Insurance</h3>
+          <p>Lower monthly premiums and find the coverage that fits your driving needs.</p>
+          <div class="ctaRow">
+            <!-- Uncomment and replace with your affiliate link:
+            <a class="btn primary" href="YOUR_AUTO_AFFILIATE_LINK" rel="nofollow sponsored" target="_blank">
+            -->
+            <a class="btn primary" href="./contact.html?type=auto">
+              Compare Auto Quotes →
+            </a>
+            <a class="btn ghost" href="./contact.html?type=auto">Need help?</a>
+          </div>
+          <small>Tip: rates vary by location, driving history, and vehicle.</small>
+        </div>
+
+        <div class="card" id="health">
+          <h3>🏥 Health Insurance</h3>
+          <p>Explore plan options for individuals and families — no pressure, no obligation.</p>
+          <div class="ctaRow">
+            <!-- Uncomment and replace with your affiliate link:
+            <a class="btn primary" href="YOUR_HEALTH_AFFILIATE_LINK" rel="nofollow sponsored" target="_blank">
+            -->
+            <a class="btn primary" href="./contact.html?type=health">
+              Compare Health Plans →
+            </a>
+            <a class="btn ghost" href="./contact.html?type=health">Ask a question</a>
+          </div>
+          <small>Tip: compare monthly premium vs deductible based on your needs.</small>
+        </div>
+
+        <div class="card" id="renters">
+          <h3>🏠 Renters Insurance</h3>
+          <p>Protect your belongings — often very low monthly cost with quick approval.</p>
+          <div class="ctaRow">
+            <!-- Uncomment and replace with your affiliate link:
+            <a class="btn primary" href="YOUR_RENTERS_AFFILIATE_LINK" rel="nofollow sponsored" target="_blank">
+            -->
+            <a class="btn primary" href="./contact.html?type=renters">
+              Get Renters Quotes →
+            </a>
+            <a class="btn ghost" href="./contact.html?type=renters">Help me choose</a>
+          </div>
+          <small>Tip: choose coverage for theft, fire, and liability.</small>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="notice">
+        🔒 <strong>Privacy:</strong> if you click a quote link, you'll be taken to a third-party provider.
+        Always review their terms and privacy policy before submitting information.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="hr"></div>
+      <div>
+        © <span id="y"></span> InsuranceBridgePro •
+        <a href="./index.html">Home</a> • <a href="./contact.html#disclaimer">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const navlinks = document.querySelector('.navlinks');
+      hamburger.classList.toggle('active');
+      navlinks.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

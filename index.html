@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compare Insurance Quotes | Save Money Today</title>
+  <meta name="description" content="Compare auto, health, and renters insurance options. Fast, free, and no obligation. Find coverage that fits your budget." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="./assets/InsuranceBridgepro_logo.png" alt="InsuranceBridgePro" class="logo" />
+        <span class="badge">Free comparisons</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="navlinks">
+        <a href="./index.html">Home</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="panel">
+        <h1 class="h1">Compare Insurance Plans & Save Money Today</h1>
+        <p class="sub">
+          Get fast, free insurance comparisons for auto, health, and renters coverage — no obligation.
+          Choose what fits your budget in minutes.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="./compare.html">Compare Insurance Now →</a>
+          <a class="btn ghost" href="./contact.html">Ask a Question</a>
+        </div>
+
+        <div class="kpi">
+          <div class="pill">✔ Compare options fast</div>
+          <div class="pill">✔ No pressure</div>
+          <div class="pill">✔ Secure & simple</div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="notice">
+          <strong>Important:</strong> This site provides insurance comparison and educational information only.
+          We are not an insurance company or broker.
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="sectionTitle sectionTitle-top">Popular Comparisons</h2>
+
+        <div class="grid3 grid3-single">
+          <div class="card">
+            <h3>🚗 Auto Insurance</h3>
+            <p>Compare quotes and reduce your premium. Great for new drivers or high rates.</p>
+            <div class="ctaRow">
+              <a class="btn green" href="./compare.html#auto">Compare Auto →</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🏥 Health Insurance</h3>
+            <p>Explore plan options for individuals and families. Find coverage within your budget.</p>
+            <div class="ctaRow">
+              <a class="btn green" href="./compare.html#health">Compare Health →</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🏠 Renters Insurance</h3>
+            <p>Protect your belongings with low-cost coverage. Fast and simple.</p>
+            <div class="ctaRow">
+              <a class="btn green" href="./compare.html#renters">Compare Renters →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="hr"></div>
+      <div>
+        © <span id="y"></span> InsuranceBridgePro •
+        <a href="./contact.html#disclaimer">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const navlinks = document.querySelector('.navlinks');
+      hamburger.classList.toggle('active');
+      navlinks.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
